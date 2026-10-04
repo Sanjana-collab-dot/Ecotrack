@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">🌱 EcoTrack</div>
+
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#challenges">Challenges</a>
+    <a href="#impact">Impact</a>
+    <a href="#league">Eco League</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#profile">Profile</a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div>
+    <p class="tag">SMALL ACTIONS. BIG IMPACT.</p>
+
+    <h1>Make your habits<br><span>matter.</span></h1>
+
+    <p>
+      EcoTrack turns everyday eco-friendly actions into
+      fun challenges, points and real-world impact.
+    </p>
+
+    <a href="#challenges" class="btn">Start Your Journey</a>
+  </div>
+</header>
+
+<section id="dashboard">
+  <h2>Your Eco Dashboard</h2>
+
+  <div class="stats">
+    <div class="stat">
+      <b id="points">0</b>
+      <span>Eco Points</span>
+    </div>
+
+    <div class="stat">
+      <b id="level">1</b>
+      <span>Level</span>
+    </div>
+
+    <div class="stat">
+      <b id="streak">0</b>
+      <span>Streak 🔥</span>
+    </div>
+
+    <div class="stat">
+      <b id="done">0</b>
+      <span>Challenges</span>
+    </div>
+  </div>
+
+  <div class="progressBox">
+    <div class="progressTop">
+      <b>Level Progress</b>
+      <span id="xpText">0 / 100 XP</span>
+    </div>
+
+    <div class="progress">
+      <div id="xpBar"></div>
+    </div>
+  </div>
+</section>
+
+<section id="challenges">
+  <h2>🌍 Eco Challenges</h2>
+  <p class="subtitle">
+    Complete simple actions and earn Eco Points.
+  </p>
+
+  <div id="challengeList" class="cards"></div>
+</section>
+
+<section id="impact">
+  <h2>🌎 Impact Simulator</h2>
+
+  <p class="subtitle">
+    See how small actions can create a bigger collective impact.
+  </p>
+
+  <div class="simulator">
+
+    <label>Number of students</label>
+    <input id="students" type="number" value="10" min="1">
+
+    <label>Number of days</label>
+    <input id="days" type="number" value="7" min="1">
+
+    <button class="btn" onclick="calculateImpact()">
+      Calculate Impact
+    </button>
+
+    <div id="impactResult" class="impactResult">
+      🌱 Your impact will appear here.
+    </div>
+
+  </div>
+</section>
+
+<section id="league">
+  <h2>🏆 Eco League</h2>
+
+  <p class="subtitle">
+    Compete with other registered EcoTrack users.
+  </p>
+
+  <div class="leagueBox">
+
+    <div class="leagueHeader">
+      <b>THIS WEEK'S ECO LEAGUE</b>
+      <b>XP</b>
+    </div>
+
+    <div id="leaderboard"></div>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <h2>🧠 Daily Eco Quiz</h2>
+
+  <p class="subtitle">
+    Answer 3 questions every day and earn 5 XP for each correct answer.
+  </p>
+
+  <div id="quizBox"></div>
+</section>
+
+<section id="profile">
+  <h2>👤 Your Eco Profile</h2>
+
+  <div class="profileBox">
+
+    <div class="avatar">🌱</div>
+
+    <h3 id="profileName">Guest</h3>
+
+    <p id="profileDetails"></p>
+
+    <div id="profileGoals" class="goals"></div>
+
+    <button class="btn" onclick="editProfile()">
+      Edit Profile
+    </button>
+
+    <button class="logout" onclick="logout()">
+      Log Out
+    </button>
+
+  </div>
+</section>
+
+<footer>
+  <b>🌱 EcoTrack</b>
+  <p>Turn everyday choices into meaningful change.</p>
+</footer>
+
+
+<!-- CREATE PROFILE -->
+
+<div id="setup" class="overlay">
+
+  <div class="setupBox">
+
+    <h2 id="setupTitle">🌱 Welcome to EcoTrack</h2>
+
+    <p id="setupText">
+      Create your Eco Profile to start your journey.
+    </p>
+
+    <input id="nameInput" placeholder="Your Name">
+
+    <input id="classInput" placeholder="Class">
+
+    <select id="houseInput">
+      <option value="">Select House</option>
+      <option>Topaz</option>
+      <option>Ruby</option>
+      <option>Sapphire</option>
+      <option>Emerald</option>
+    </select>
+
+    <input id="goal1Input" placeholder="Eco Goal 1">
+
+    <input id="goal2Input" placeholder="Eco Goal 2">
+
+    <button id="saveButton" class="btn" onclick="createProfile()">
+      Create Profile
+    </button>
+
+    <button class="switchButton" onclick="showLogin()">
+      Already registered? Log In
+    </button>
+
+  </div>
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="loginBox" class="overlay hidden">
+
+  <div class="setupBox">
+
+    <h2>👋 Welcome Back</h2>
+
+    <p>Select your registered profile.</p>
+
+    <div id="savedProfiles"></div>
+
+    <button class="btn" onclick="showSetup()">
+      + Create New Profile
+    </button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
